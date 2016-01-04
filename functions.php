@@ -116,6 +116,11 @@ add_action( 'widgets_init', 'k_ameno_widgets_init' );
 function k_ameno_scripts() {
 	wp_enqueue_style( 'k-ameno-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( 'k-ameno-google-fonts', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,400italic,700,900,900italic|PT+Serif:400,700,400italic,700italic' );
+                    
+	// FontAwesome
+	wp_enqueue_style('k-ameno_fontawesome', 'http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+
 	wp_enqueue_script( 'k-ameno-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'k-ameno-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
