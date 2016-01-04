@@ -575,14 +575,23 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
+	position: relative;
 	clear: both;
 	display: block;
 	float: left;
 	width: 100%;
+	font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    background: #313131;
+    background: hsl(0, 0%, 19%);
+}
+
+.home #masthead.masthead-fullscreen .main-navigation, .front-page #masthead.masthead-fullscreen .main-navigation{
+	position:absolute;
+	bottom:0;
 }
 
 .main-navigation ul {
-	display: none;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
@@ -595,21 +604,33 @@ a:active {
 
 .main-navigation a {
 	display: block;
+	padding: 1em 1em;
+    font-size: 14px;
+    font-size: 1rem;
 	text-decoration: none;
+	line-height: 1.3em;
+    color: white;
+    color: hsl(0, 0%, 100%);
+	font-family: "Lato",sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.221em;
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 1.5em;
-	left: -999em;
-	z-index: 99999;
+    position: absolute;
+    left: 0;
+    z-index: 99999;
+    display: none;
+    float: left;
+    padding: 0;
+    background: #4d4d4d;
+    background: hsl(0, 0%, 30%);
 }
 
 .main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
+    left: 100%;
+    top: 0;
 }
 
 .main-navigation ul ul a {
@@ -622,6 +643,10 @@ a:active {
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+    background: #4d4d4d;
+    background: hsl(0, 0%, 30%);
 }
 
 .main-navigation ul ul :hover > a,
@@ -630,11 +655,13 @@ a:active {
 
 .main-navigation ul ul a:hover,
 .main-navigation ul ul a.focus {
+    background: #313131;
+    background: hsl(0, 0%, 19%);
 }
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-	left: auto;
+	display: block;
 }
 
 .main-navigation ul ul li:hover > ul,
@@ -646,6 +673,9 @@ a:active {
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
+    background: white;
+    color: #313131;
+    color: hsl(0, 0%, 19%);
 }
 
 /* Small menu. */
@@ -780,6 +810,10 @@ a:active {
     background: #ff2a13;
 }
 
+.logged-in #masthead{
+	margin-top:-32px;	
+}
+
 .site-branding {
 	padding: 6rem 0;
     text-align: center;
@@ -859,7 +893,8 @@ a:active {
 }
 @media screen and (min-width: 601px) {
 .home #masthead.masthead-fullscreen, .front-page #masthead.masthead-fullscreen{
-    min-height:100%;		
+    min-height:100%;	
+	position:relative;	
 }
 }
 
