@@ -776,7 +776,7 @@ a:active {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-.home #masthead{
+#masthead{
     background: #ff2a13;
 }
 
@@ -790,7 +790,19 @@ a:active {
     margin: 0 auto;
 }
 
-.home .site-branding{
+.header-background-image {
+    background: no-repeat center;
+    background-size: cover!important;
+    -moz-background-size: cover!important;
+    -webkit-background-size: cover!important;
+}
+
+.header-background-image .title-wrapper {
+    background: #333;
+    background: hsla(0, 0%, 0%, .4);
+}   
+
+.home #masthead.masthead-fullscreen .site-branding{
 	display: table;
     width: 100%;
 }
@@ -812,7 +824,7 @@ a:active {
     font-size: 2rem;
 }
 
-.home .branding-box{
+.home #masthead.masthead-fullscreen .branding-box{
 	display: table-cell;
     vertical-align: middle;
 }
@@ -846,7 +858,7 @@ a:active {
     }
 }
 @media screen and (min-width: 601px) {
-.home #masthead, .front-page #masthead{
+.home #masthead.masthead-fullscreen, .front-page #masthead.masthead-fullscreen{
     min-height:100%;		
 }
 }
