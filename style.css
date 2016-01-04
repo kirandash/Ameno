@@ -774,7 +774,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-# Widgets
+# Header
 --------------------------------------------------------------*/
 .home #masthead{
     background: #ff2a13;
@@ -783,6 +783,11 @@ a:active {
 .site-branding {
 	padding: 6rem 0;
     text-align: center;
+}
+
+.header-image img {
+    display: block;
+    margin: 0 auto;
 }
 
 .home .site-branding{
@@ -845,6 +850,10 @@ a:active {
     min-height:100%;		
 }
 }
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
 .widget {
 	margin: 0 0 1.5em;
 }

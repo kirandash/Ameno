@@ -23,10 +23,10 @@
 function k_ameno_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'k_ameno_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
-		'flex-height'            => true,
+		'default-text-color'     => 'ffffff',
+		'width'                  => 1280,
+		'height'                 => 300,
+		'flex-height'            => false,
 		'wp-head-callback'       => 'k_ameno_header_style',
 	) ) );
 }
