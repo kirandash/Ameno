@@ -116,6 +116,8 @@ add_action( 'widgets_init', 'k_ameno_widgets_init' );
 function k_ameno_scripts() {
 	wp_enqueue_style( 'k-ameno-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( 'k-ameno-layout-style' , get_template_directory_uri() . '/layouts/content-sidebar.css');
+	
 	wp_enqueue_style( 'k-ameno-google-fonts', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,400italic,700,900,900italic|PT+Serif:400,700,400italic,700italic' );
                     
 	// FontAwesome
