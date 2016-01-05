@@ -25,16 +25,16 @@ function k_ameno_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'k-ameno' ),
+		esc_html_x( 'Published on %s', 'post date', 'k-ameno' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'k-ameno' ),
+		esc_html_x( 'Author: %s', 'post author', 'k-ameno' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	echo '<span class="byline"> ' . $byline . '</span><span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
 }
 endif;
@@ -55,7 +55,7 @@ function k_ameno_entry_footer() {
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'k-ameno' ), esc_html__( '1 Comment', 'k-ameno' ), esc_html__( '% Comments', 'k-ameno' ) );
+		comments_popup_link( esc_html__( 'Leave your comment', 'k-ameno' ), esc_html__( '1 Comment', 'k-ameno' ), esc_html__( '% Comments', 'k-ameno' ) );
 		echo '</span>';
 	}
 
