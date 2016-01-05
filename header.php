@@ -31,11 +31,13 @@ if ( get_header_image() && !('blank' == get_header_textcolor()) ) { ?>
    
 <header id="masthead" class="site-header masthead-fullscreen" role="banner">       
  
-<?php } 
- 
- k_ameno_social_menu();  
+<?php } ?>
+	<div id="header-meta"> 
+	<?php k_ameno_social_menu();  ?>
+    </div>
 
-        if ( is_front_page() && is_home() &&  get_header_image() && !('blank' == get_header_textcolor()) ) { 
+    <?php
+        if ( get_header_image() && !('blank' == get_header_textcolor()) ) { 
             echo '<div class="site-branding header-background-image" style="background-image: url(' . get_header_image() . ')">'; 
         } else {
             echo '<div class="site-branding">';
