@@ -53,7 +53,7 @@ html {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 }
-html, body.home, body.front-page{
+html, body{
 	height: 100%;
 	margin:0;	
 }
@@ -586,7 +586,7 @@ a:active {
     background: hsl(0, 0%, 19%);
 }
 
-.home #masthead.masthead-fullscreen .main-navigation, .front-page #masthead.masthead-fullscreen .main-navigation{
+#masthead.masthead-fullscreen .main-navigation, #masthead.masthead-fullscreen .main-navigation{
 	position:absolute;
 	bottom:0;
 }
@@ -836,11 +836,6 @@ a:active {
     background: hsla(0, 0%, 0%, .4);
 }   
 
-.home #masthead.masthead-fullscreen .site-branding{
-	display: table;
-    width: 100%;
-}
-
 .site-title {
     font-weight: 300;
     font-size: 40px;
@@ -856,11 +851,6 @@ a:active {
     font-weight: 100;
     font-size: 20px;
     font-size: 2rem;
-}
-
-.home #masthead.masthead-fullscreen .branding-box{
-	display: table-cell;
-    vertical-align: middle;
 }
                     
 .title-wrapper {
@@ -892,9 +882,19 @@ a:active {
     }
 }
 @media screen and (min-width: 601px) {
-.home #masthead.masthead-fullscreen, .front-page #masthead.masthead-fullscreen{
+#masthead.masthead-fullscreen, #masthead.masthead-fullscreen{
     min-height:100%;	
 	position:relative;	
+}
+
+#masthead.masthead-fullscreen .site-branding{
+	display: table;
+    width: 100%;
+}
+
+#masthead.masthead-fullscreen .branding-box{
+	display: table-cell;
+    vertical-align: middle;
 }
 }
 
