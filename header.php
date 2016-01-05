@@ -35,6 +35,11 @@ if ( get_header_image() && !('blank' == get_header_textcolor()) ) { ?>
 	<div id="header-meta"> 
 	<?php k_ameno_social_menu();  ?>
     </div>
+    <div id="search-container" class="search-box-wrapper clear">
+        <div class="search-box clear">
+            <?php get_search_form(); ?>
+        </div>
+    </div> 
 
     <?php
         if ( get_header_image() && !('blank' == get_header_textcolor()) ) { 
