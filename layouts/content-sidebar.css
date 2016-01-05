@@ -10,6 +10,18 @@
 .site-main {
     background: #f3f3f3 url(../images/bg-site-main.png) center top repeat;
 }
+
+.site-content {
+    padding-bottom: 4em;
+    background: #b2b2b2;
+}
+
+.single .site-content,
+.page .site-content { 
+    background: #fff; 
+    background: hsl(0, 0%, 100%);
+}
+
 .site-content .widget-area {
     width: 380px;
     float: right;
