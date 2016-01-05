@@ -1039,6 +1039,36 @@ a:active {
 
 /* Header search */
 
+.search-toggle {
+    float: right;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    margin-right: 20px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.search-toggle .fa{
+	font-size:14px;	
+}
+
+.search-toggle:hover,
+.search-toggle.active {
+    background: #4d4d4d;
+    background: hsl(0, 0%, 30%);
+}
+
+@media screen and (max-width: 600px) {
+    .search-toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 0;
+    }
+}
+
 input[type="search"] {
     box-sizing: border-box;
     width: 100%;
@@ -1050,7 +1080,8 @@ input[type="search"] {
 }
 
 .search-box {
-    max-width: 400px;
+    float: right;
+	max-width: 400px;
     padding: 0.5em;
     background: #4d4d4d;
     background: hsl(0, 0%, 30%);

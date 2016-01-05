@@ -32,9 +32,15 @@ if ( get_header_image() && !('blank' == get_header_textcolor()) ) { ?>
 <header id="masthead" class="site-header masthead-fullscreen" role="banner">       
  
 <?php } ?>
-	<div id="header-meta"> 
-	<?php k_ameno_social_menu();  ?>
+	
+    <div id="header-meta"> 
+		<div class="search-toggle">
+            <i class="fa fa-search"></i>
+            <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'my-simone' ); ?></a>
+        </div>
+		<?php k_ameno_social_menu();  ?>
     </div>
+    
     <div id="search-container" class="search-box-wrapper clear">
         <div class="search-box clear">
             <?php get_search_form(); ?>
