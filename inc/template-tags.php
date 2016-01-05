@@ -119,3 +119,24 @@ function k_ameno_category_transient_flusher() {
 }
 add_action( 'edit_category', 'k_ameno_category_transient_flusher' );
 add_action( 'save_post',     'k_ameno_category_transient_flusher' );
+
+/*
+ * Social media icon menu as per http://justintadlock.com/archives/2013/08/14/social-nav-menus-part-2
+ */
+
+function k_ameno_social_menu() {
+    if ( has_nav_menu( 'social' ) ) {
+	wp_nav_menu(
+		array(
+			'theme_location'  => 'social',
+			'container'       => 'div',
+			'container_id'    => 'menu-social',
+			'container_class' => 'menu-social',
+			'menu_id'         => 'menu-social-items',
+			'menu_class'      => 'menu-items',
+			'depth'           => 1,
+			'fallback_cb'     => '',
+		)
+	);
+    }
+}
