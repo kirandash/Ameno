@@ -12,7 +12,15 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
+
 			if ( is_single() ) {
+
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( esc_html__( ', ', 'k-ameno' ) );
+			if ( $categories_list && k_ameno_categorized_blog() ) {
+				printf( '<div class="category-list"><span class="cat-links">' . esc_html__( 'Posted in %1$s', 'k-ameno' ) . '</span>', $categories_list . '</div>'); // WPCS: XSS OK.
+			}
+			
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			} else {
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
