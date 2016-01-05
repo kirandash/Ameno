@@ -1056,8 +1056,7 @@ a:active {
 .search-toggle {
     float: right;
     width: 30px;
-    height: 30px;
-    padding: 5px;
+    line-height: 30px;
     margin-right: 20px;
     color: #fff;
     text-align: center;
@@ -1066,6 +1065,8 @@ a:active {
 
 .search-toggle .fa{
 	font-size:14px;	
+	display:block;
+	line-height:30px;
 }
 
 .search-toggle:hover,
