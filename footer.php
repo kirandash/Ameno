@@ -14,7 +14,10 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
+		
+        <?php get_sidebar( 'footer' ); ?>
+        
+        <div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'k-ameno' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'k-ameno' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
 			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'k-ameno' ), 'k-ameno', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
