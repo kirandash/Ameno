@@ -808,7 +808,7 @@ a:active {
 /* Social Menu */
 
 #header-meta{
-	background:rgba(255,255,255,0.1);
+	background:rgba(0,0,0,0.3);
     min-height: 30px;
 }
 
@@ -830,6 +830,14 @@ a:active {
     line-height: 30px; 
     font-family: 'Lato', sans-serif;
     font-size: 14px;
+}
+
+.menu-social li a {
+	color:#fff;
+}
+
+.menu-social li a:hover {
+	text-decoration:underline;
 }
 
 .menu-social li a:before {
