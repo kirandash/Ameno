@@ -818,6 +818,13 @@ a:active {
     font-weight: 900; 
 }
 
+.post-nav-box {
+    padding: 2em 0;
+    margin-bottom: 4em;
+    border-top: hsl(0, 0%, 80%) solid 1px;
+    border-bottom: hsl(0, 0%, 80%) solid 1px; 
+}
+
 /* Social Menu */
 
 #header-meta{
