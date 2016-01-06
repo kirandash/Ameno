@@ -134,3 +134,63 @@ function k_ameno_social_menu() {
 	);
     }
 }
+
+if ( ! function_exists( 'k_ameno_paging_nav' ) ) :
+/**
+ * Display navigation to next/previous set of posts when applicable.
+ *
+ * @return void
+ */
+function my_simone_paging_nav() {
+	// Don't print empty markup if there's only one page.
+	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+		return;
+	}
+	?>
+	<nav class="navigation paging-navigation" role="navigation">
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'my-simone' ); ?></h1>
+		<div class="nav-links">
+
+			<?php if ( get_next_posts_link() ) : ?>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'my-simone' ) ); ?></div>
+			<?php endif; ?>
+
+			<?php if ( get_previous_posts_link() ) : ?>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'my-simone' ) ); ?></div>
+			<?php endif; ?>
+
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	<?php
+}
+endif;
+if ( ! function_exists( 'k_ameno_post_nav' ) ) :
+/**
+ * Display navigation to next/previous post when applicable.
+ *
+ * @return void
+ */
+function k_ameno_post_nav() {
+	// Don't print empty markup if there's nowhere to navigate.
+	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+	$next     = get_adjacent_post( false, '', false );
+	if ( ! $next && ! $previous ) {
+		return;
+	}
+	?>
+	
+    <nav class="navigation post-navigation" role="navigation">
+        <div class="post-nav-box clear">
+            <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'my-simone' ); ?></h1>
+            <div class="nav-links">
+                <?php
+                previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . _x( 'Previous Post:', 'Previous post', 'my-simone' ) . '</div><h1>%link</h1></div>', '%title' );
+                next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . _x( 'Next Post:', 'Next post', 'my-simone' ) . '</div><h1>%link</h1></div>', '%title' );
+                ?>
+            </div><!-- .nav-links -->
+        </div><!-- .post-nav-box -->
+    </nav><!-- .navigation -->
+                    
+	<?php
+}
+endif;

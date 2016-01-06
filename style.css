@@ -786,8 +786,11 @@ a:active {
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
+	font-size: 18px;
+	font-size: 1.8rem;
+	font-family: 'Lato', sans-serif;
+	color: #000;
+	color: hsl(0, 0%, 0%);
 }
 
 .comment-navigation .nav-previous,
@@ -795,6 +798,7 @@ a:active {
 .post-navigation .nav-previous {
 	float: left;
 	width: 50%;
+	padding-right: 15%;
 }
 
 .comment-navigation .nav-next,
@@ -803,6 +807,15 @@ a:active {
 	float: right;
 	text-align: right;
 	width: 50%;
+	padding-left: 15%;
+}
+.nav-indicator { 
+    margin-bottom: 1em; 
+}
+
+.nav-previous h1,
+.nav-next h1 { 
+    font-weight: 900; 
 }
 
 /* Social Menu */
