@@ -134,29 +134,28 @@ function k_ameno_social_menu() {
 	);
     }
 }
-
 if ( ! function_exists( 'k_ameno_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
  * @return void
  */
-function my_simone_paging_nav() {
+function k_ameno_paging_nav() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'my-simone' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'k-ameno' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'my-simone' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'k-ameno' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'my-simone' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'k-ameno' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -181,11 +180,11 @@ function k_ameno_post_nav() {
 	
     <nav class="navigation post-navigation" role="navigation">
         <div class="post-nav-box clear">
-            <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'my-simone' ); ?></h1>
+            <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'k-ameno' ); ?></h1>
             <div class="nav-links">
                 <?php
-                previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . _x( 'Previous Post:', 'Previous post', 'my-simone' ) . '</div><h1>%link</h1></div>', '%title' );
-                next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . _x( 'Next Post:', 'Next post', 'my-simone' ) . '</div><h1>%link</h1></div>', '%title' );
+                previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . _x( 'Previous Post:', 'Previous post', 'k-ameno' ) . '</div><h1>%link</h1></div>', '%title' );
+                next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . _x( 'Next Post:', 'Next post', 'k-ameno' ) . '</div><h1>%link</h1></div>', '%title' );
                 ?>
             </div><!-- .nav-links -->
         </div><!-- .post-nav-box -->
