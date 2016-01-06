@@ -1041,16 +1041,6 @@ input[type="search"] {
     min-height:100%;	
 	position:relative;	
 }
-
-#masthead.masthead-fullscreen .site-branding{
-	display: table;
-    width: 100%;
-}
-
-#masthead.masthead-fullscreen .branding-box{
-	display: table-cell;
-    vertical-align: middle;
-}
 }
 
 /*--------------------------------------------------------------
