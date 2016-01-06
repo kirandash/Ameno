@@ -10,7 +10,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<?php 
+		if ( is_single() && has_post_thumbnail()) {
+			echo '<div class="single-post-thumbnail clear">';
+			echo the_post_thumbnail('large-thumb');
+			echo '</div>';
+		}
+	?>
+    <header class="entry-header">
 		<?php
 
 			if ( is_single() ) {
