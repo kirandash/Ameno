@@ -1271,7 +1271,7 @@ input[type="search"] {
 }
 
 .entry-footer a {
-    margin-left: .5rem;
+
 }
 .sticky {
 	display: block;
@@ -1529,6 +1529,15 @@ Index and Archive
     font-weight: 900;
     font-size: 18px;
     font-size: 1.8rem;
+}
+
+.read-more a{
+    padding: 11px 28px;
+	box-shadow: 0 0 0 2px #e8e8e8 inset;	
+	color: #666666;
+}
+.read-more a:hover{
+    background-color: rgba(0,0,0,0.1);
 }
 
 .read-more i { margin-left: .5em; }
