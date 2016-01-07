@@ -43,6 +43,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 	## Captions
 	## Galleries
+# Footer
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -1605,8 +1606,13 @@ object {
     }
 }
 
+.small-index-thumbnail { 
+    margin-top: -1em;
+    margin-bottom: 1em;
+}
+
 /*--------------------------------------------------------------
- Footer
+# Footer
 --------------------------------------------------------------*/
 
 .site-footer {

@@ -10,7 +10,16 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="index-box">
-	<header class="entry-header clear">
+	<?php
+	if (has_post_thumbnail()) {
+		echo '<div class="small-index-thumbnail clear">';
+		echo '<a href="' . get_permalink() . '" title="' . __('Read ', 'k-ameno') . get_the_title() . '" rel="bookmark">';
+		echo the_post_thumbnail('index-thumb');
+		echo '</a>';
+		echo '</div>';
+	}
+	?>
+    <header class="entry-header clear">
             <?php
                 /* translators: used between list items, there is a space after the comma */
                 $category_list = get_the_category_list( __( ', ', 'k-ameno' ) );
