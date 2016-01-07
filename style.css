@@ -1520,6 +1520,19 @@ ol.children { list-style-type: none; }
 }
 
 /*--------------------------------------------------------------
+Index and Archive
+--------------------------------------------------------------*/
+
+.read-more {
+    margin: 0 4rem;
+    font-weight: 900;
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+
+.read-more i { margin-left: .5em; }
+
+/*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */

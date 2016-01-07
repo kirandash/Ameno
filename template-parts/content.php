@@ -46,8 +46,9 @@
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
-	<footer class="entry-footer">
-		
-	</footer><!-- .entry-footer -->
+	<footer class="entry-footer read-more">
+		<?php echo '<a href="' . get_permalink() . '" title="' . __('Read more ', 'k-ameno') . get_the_title() . '" rel="bookmark">Read more<i class="fa fa-arrow-circle-o-right"></i></a>'; ?>
+    </footer><!-- .entry-footer -->
+    
     </div><!-- .index-box -->
 </article><!-- #post-## -->
