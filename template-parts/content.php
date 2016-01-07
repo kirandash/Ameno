@@ -42,13 +42,7 @@
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">→</span>', 'k-ameno' ) ); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'k-ameno' ),
-				'after'  => '</div>',
-			) );
-		?>
+		<?php the_excerpt(); ?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
