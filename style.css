@@ -1271,7 +1271,7 @@ input[type="search"] {
 }
 
 .entry-footer a {
-
+    margin-left: .5rem;
 }
 .sticky {
 	display: block;
