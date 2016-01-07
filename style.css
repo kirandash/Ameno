@@ -232,7 +232,7 @@ html {
 }
 
 body {
-	background: #fff; /* Fallback for when there is no custom background color defined. */
+	background: #f3f3f3 url(images/bg-site-main.png) center top repeat; /* Fallback for when there is no custom background color defined. */
 }
 
 blockquote:before,
