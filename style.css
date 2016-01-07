@@ -73,11 +73,6 @@ html {
 	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 
-html, body{
-	height: 100%;
-	margin:0;	
-}
-
 *,
 *:before,
 *:after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
@@ -641,13 +636,6 @@ a:active {
         
 } /* End responsive menu */
 
-@media screen and (min-width: 601px) {
-	#masthead.masthead-fullscreen .main-navigation, #masthead.masthead-fullscreen .main-navigation{
-		position:absolute;
-		bottom:0;
-	}
-}
-
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
@@ -716,6 +704,7 @@ a:active {
     text-align: center;
     list-style: none;   
 	line-height:30px; 
+	margin:0;
 }
 
 .menu-social ul li {
@@ -1035,12 +1024,6 @@ input[type="search"] {
         padding: 4rem;
         border: none;
     }
-}
-@media screen and (min-width: 601px) {
-#masthead.masthead-fullscreen, #masthead.masthead-fullscreen{
-    min-height:100%;	
-	position:relative;	
-}
 }
 
 /*--------------------------------------------------------------

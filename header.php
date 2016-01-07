@@ -22,21 +22,12 @@
 
 <body <?php body_class(); ?>>
 
-<?php 
-if ( get_header_image() && !('blank' == get_header_textcolor()) ) { ?>
-    
 <header id="masthead" class="site-header" role="banner">
-	
-<?php } else { ?>
-   
-<header id="masthead" class="site-header masthead-fullscreen" role="banner">       
- 
-<?php } ?>
 	
     <div id="header-meta"> 
 		<div class="search-toggle">
             <i class="fa fa-search"></i>
-            <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'my-simone' ); ?></a>
+            <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'k-ameno' ); ?></a>
         </div>
 		<?php k_ameno_social_menu();  ?>
     </div>
@@ -50,27 +41,8 @@ if ( get_header_image() && !('blank' == get_header_textcolor()) ) { ?>
     <?php
         if ( get_header_image() && !('blank' == get_header_textcolor()) ) { 
             echo '<div class="site-branding header-background-image" style="background-image: url(' . get_header_image() . ')">'; 
-        } else {
-            echo '<div class="site-branding">';
         }
     ?>
-        <div class="branding-box">
-            <div class="title-wrapper">
-            <?php
-            if ( is_front_page() && is_home() ) : ?>
-                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-            <?php else : ?>
-                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-            <?php
-            endif;
-    
-            $description = get_bloginfo( 'description', 'display' );
-            if ( $description || is_customize_preview() ) : ?>
-                <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-            <?php
-            endif; ?>
-            </div>
-        </div>
     </div><!-- .site-branding -->
 
     <nav id="site-navigation" class="main-navigation" role="navigation">
