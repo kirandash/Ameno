@@ -34,6 +34,7 @@
 	width: 100%;
 }
 .entry-header,
+.page-header,
 .entry-content,
 .entry-meta,
 .entry-footer,
@@ -110,10 +111,15 @@
     }
 }
 
-.paging-navigation {
+.page-header,.paging-navigation {
     padding-top: 1em;
     padding-bottom: 1em;
     margin-bottom: 2em;
     list-style-type: none;
     background: #fff;
 }  
+
+.page-header {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
