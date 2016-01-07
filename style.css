@@ -1566,6 +1566,12 @@ Index and Archive
 
 .read-more i { margin-left: .5em; }
 
+.sticky-post {
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
+}
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/

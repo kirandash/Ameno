@@ -21,6 +21,12 @@
 	?>
     <header class="entry-header clear">
             <?php
+			// Display a thumb tack in the top right hand corner if this post is sticky
+			if (is_sticky()) {
+				echo '<i class="fa fa-thumb-tack sticky-post"></i>';
+			}
+			?>
+			<?php
                 /* translators: used between list items, there is a space after the comma */
                 $category_list = get_the_category_list( __( ', ', 'k-ameno' ) );
 
