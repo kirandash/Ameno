@@ -169,8 +169,8 @@ function k_ameno_paging_nav() {
 		'current'  => $paged,
 		'mid_size' => 2,
 		'add_args' => array_map( 'urlencode', $query_args ),
-		'prev_text' => __( '← Previous', 'k-ameno' ),
-		'next_text' => __( 'Next →', 'k-ameno' ),
+		'prev_text' => __( '←', 'k-ameno' ),
+		'next_text' => __( '→', 'k-ameno' ),
         'type'      => 'list',
 	) );
 
