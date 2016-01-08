@@ -12,33 +12,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package k-ameno
+ * @package ameno
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses k_ameno_header_style()
+ * @uses ameno_header_style()
  */
-function k_ameno_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'k_ameno_custom_header_args', array(
+function ameno_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'ameno_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => 'ffffff',
 		'width'                  => 1280,
 		'height'                 => 300,
 		'flex-height'            => false,
-		'wp-head-callback'       => 'k_ameno_header_style',
+		'wp-head-callback'       => 'ameno_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'k_ameno_custom_header_setup' );
+add_action( 'after_setup_theme', 'ameno_custom_header_setup' );
 
-if ( ! function_exists( 'k_ameno_header_style' ) ) :
+if ( ! function_exists( 'ameno_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @see k_ameno_custom_header_setup().
+ * @see ameno_custom_header_setup().
  */
-function k_ameno_header_style() {
+function ameno_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	/*

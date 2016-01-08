@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package k-ameno
+ * @package ameno
  */
 
 get_header(); ?>
@@ -35,7 +35,7 @@ get_header(); ?>
 
 			endwhile;
 
-			k_ameno_paging_nav();
+			ameno_paging_nav();
 
 		else :
 

@@ -1,13 +1,13 @@
 <?php
 /**
- * k-ameno functions and definitions.
+ * ameno functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package k-ameno
+ * @package ameno
  */
 
-if ( ! function_exists( 'k_ameno_setup' ) ) :
+if ( ! function_exists( 'ameno_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,7 +15,7 @@ if ( ! function_exists( 'k_ameno_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function k_ameno_setup() {
+function ameno_setup() {
 	
 	// This theme styles the visual editor to resemble the theme style.
 	$font_url = 'http://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,900,900italic|PT+Serif:400,700,400italic,700italic';
@@ -24,10 +24,10 @@ function k_ameno_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on k-ameno, use a find and replace
-	 * to change 'k-ameno' to the name of your theme in all the template files.
+	 * If you're building a theme based on ameno, use a find and replace
+	 * to change 'ameno' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'k-ameno', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'ameno', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -51,8 +51,8 @@ function k_ameno_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'k-ameno' ),
-		'social' => __( 'Social Menu', 'k-ameno'),
+		'primary' => esc_html__( 'Primary', 'ameno' ),
+		'social' => __( 'Social Menu', 'ameno'),
 	) );
 
 	/*
@@ -80,13 +80,13 @@ function k_ameno_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'k_ameno_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'ameno_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 }
 endif;
-add_action( 'after_setup_theme', 'k_ameno_setup' );
+add_action( 'after_setup_theme', 'ameno_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -95,19 +95,19 @@ add_action( 'after_setup_theme', 'k_ameno_setup' );
  *
  * @global int $content_width
  */
-function k_ameno_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'k_ameno_content_width', 600 );
+function ameno_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'ameno_content_width', 600 );
 }
-add_action( 'after_setup_theme', 'k_ameno_content_width', 0 );
+add_action( 'after_setup_theme', 'ameno_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function k_ameno_widgets_init() {
+function ameno_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'k-ameno' ),
+		'name'          => esc_html__( 'Sidebar', 'ameno' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -116,8 +116,8 @@ function k_ameno_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footer Widgets', 'k-ameno' ),
-		'description'   => __( 'Footer widgets area appears in the footer of the site.', 'k-ameno' ),
+		'name'          => __( 'Footer Widgets', 'ameno' ),
+		'description'   => __( 'Footer widgets area appears in the footer of the site.', 'ameno' ),
 		'id'            => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -125,43 +125,43 @@ function k_ameno_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 }
-add_action( 'widgets_init', 'k_ameno_widgets_init' );
+add_action( 'widgets_init', 'ameno_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function k_ameno_scripts() {
-	wp_enqueue_style( 'k-ameno-style', get_stylesheet_uri() );
+function ameno_scripts() {
+	wp_enqueue_style( 'ameno-style', get_stylesheet_uri() );
 
 	if (is_page_template('page-templates/page-nosidebar.php')) {
-		wp_enqueue_style( 'k-ameno-layout-style' , get_template_directory_uri() . '/layouts/no-sidebar.css');
+		wp_enqueue_style( 'ameno-layout-style' , get_template_directory_uri() . '/layouts/no-sidebar.css');
 	} else {
-		wp_enqueue_style( 'k-ameno-layout-style' , get_template_directory_uri() . '/layouts/content-sidebar.css');
+		wp_enqueue_style( 'ameno-layout-style' , get_template_directory_uri() . '/layouts/content-sidebar.css');
 	}
 	
-	wp_enqueue_style( 'k-ameno-layout-style' , get_template_directory_uri() . '/layouts/content-sidebar.css');
+	wp_enqueue_style( 'ameno-layout-style' , get_template_directory_uri() . '/layouts/content-sidebar.css');
 	
-	wp_enqueue_style( 'k-ameno-google-fonts', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,400italic,700,900,900italic|PT+Serif:400,700,400italic,700italic' );
+	wp_enqueue_style( 'ameno-google-fonts', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,400italic,700,900,900italic|PT+Serif:400,700,400italic,700italic' );
                     
 	// FontAwesome
-	wp_enqueue_style('k-ameno_fontawesome', 'http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+	wp_enqueue_style('ameno_fontawesome', get_template_directory_uri() .  '/font-awesome/css/font-awesome.min.css');
 	
-	wp_enqueue_script( 'k-ameno-superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jquery'), '20140328', true );
+	wp_enqueue_script( 'ameno-superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jquery'), '20140328', true );
 	
-	wp_enqueue_script( 'k-ameno-superfish-settings', get_template_directory_uri() . '/js/superfish-settings.js', array('k-ameno-superfish'), '20140328', true );
+	wp_enqueue_script( 'ameno-superfish-settings', get_template_directory_uri() . '/js/superfish-settings.js', array('ameno-superfish'), '20140328', true );
                 
-	wp_enqueue_script( 'k-ameno-hide-search', get_template_directory_uri() . '/js/hide-search.js', array(), '20140404', true );
+	wp_enqueue_script( 'ameno-hide-search', get_template_directory_uri() . '/js/hide-search.js', array(), '20140404', true );
 	
-	wp_enqueue_script( 'k-ameno-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'ameno-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'k-ameno-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-	wp_enqueue_script( 'k-ameno-masonry', get_template_directory_uri() . '/js/masonry-settings.js', array('masonry'), '20140401', true );
+	wp_enqueue_script( 'ameno-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'ameno-masonry', get_template_directory_uri() . '/js/masonry-settings.js', array('masonry'), '20140401', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'k_ameno_scripts' );
+add_action( 'wp_enqueue_scripts', 'ameno_scripts' );
 
 /**
  * Implement the Custom Header feature.

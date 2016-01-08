@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package k-ameno
+ * @package ameno
  */
 
 get_header(); ?>
@@ -17,7 +17,7 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', 'single' );
 
-			k_ameno_post_nav();
+			ameno_post_nav();
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :

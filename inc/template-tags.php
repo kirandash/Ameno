@@ -4,14 +4,14 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package k-ameno
+ * @package ameno
  */
 
-if ( ! function_exists( 'k_ameno_posted_on' ) ) :
+if ( ! function_exists( 'ameno_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function k_ameno_posted_on() {
+function ameno_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -25,12 +25,12 @@ function k_ameno_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( '%s', 'post date', 'k-ameno' ),
+		esc_html_x( '%s', 'post date', 'ameno' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		esc_html_x( '%s', 'post author', 'k-ameno' ),
+		esc_html_x( '%s', 'post author', 'ameno' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -39,30 +39,30 @@ function k_ameno_posted_on() {
 }
 endif;
 
-if ( ! function_exists( 'k_ameno_entry_footer' ) ) :
+if ( ! function_exists( 'ameno_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function k_ameno_entry_footer() {
+function ameno_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'k-ameno' ) );
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'ameno' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( '%1$s', 'k-ameno' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">' . esc_html__( '%1$s', 'ameno' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave your comment', 'k-ameno' ), esc_html__( '1 Comment', 'k-ameno' ), esc_html__( '% Comments', 'k-ameno' ) );
+		comments_popup_link( esc_html__( 'Leave your comment', 'ameno' ), esc_html__( '1 Comment', 'ameno' ), esc_html__( '% Comments', 'ameno' ) );
 		echo '</span>';
 	}
 
 	edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'k-ameno' ),
+			esc_html__( 'Edit %s', 'ameno' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
 		'<span class="edit-link">',
@@ -76,8 +76,8 @@ endif;
  *
  * @return bool
  */
-function k_ameno_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'k_ameno_categories' ) ) ) {
+function ameno_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'ameno_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -89,36 +89,36 @@ function k_ameno_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'k_ameno_categories', $all_the_cool_cats );
+		set_transient( 'ameno_categories', $all_the_cool_cats );
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so k_ameno_categorized_blog should return true.
+		// This blog has more than 1 category so ameno_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so k_ameno_categorized_blog should return false.
+		// This blog has only 1 category so ameno_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in k_ameno_categorized_blog.
+ * Flush out the transients used in ameno_categorized_blog.
  */
-function k_ameno_category_transient_flusher() {
+function ameno_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 	// Like, beat it. Dig?
-	delete_transient( 'k_ameno_categories' );
+	delete_transient( 'ameno_categories' );
 }
-add_action( 'edit_category', 'k_ameno_category_transient_flusher' );
-add_action( 'save_post',     'k_ameno_category_transient_flusher' );
+add_action( 'edit_category', 'ameno_category_transient_flusher' );
+add_action( 'save_post',     'ameno_category_transient_flusher' );
 
 /*
  * Social media icon menu as per http://justintadlock.com/archives/2013/08/14/social-nav-menus-part-2
  */
 
-function k_ameno_social_menu() {
+function ameno_social_menu() {
     if ( has_nav_menu( 'social' ) ) {
 	wp_nav_menu(
 		array(
@@ -136,13 +136,13 @@ function k_ameno_social_menu() {
 	);
     }
 }
-if ( ! function_exists( 'k_ameno_paging_nav' ) ) :
+if ( ! function_exists( 'ameno_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
  * @return void
  */
-function k_ameno_paging_nav() {
+function ameno_paging_nav() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
@@ -171,8 +171,8 @@ function k_ameno_paging_nav() {
 		'current'  => $paged,
 		'mid_size' => 2,
 		'add_args' => array_map( 'urlencode', $query_args ),
-		'prev_text' => __( '←', 'k-ameno' ),
-		'next_text' => __( '→', 'k-ameno' ),
+		'prev_text' => __( '<i class="fa fa-prev"></i>', 'ameno' ),
+		'next_text' => __( '<i class="fa fa-prev"></i>', 'ameno' ),
         'type'      => 'list',
 	) );
 
@@ -180,20 +180,20 @@ function k_ameno_paging_nav() {
 
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'k-ameno' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'ameno' ); ?></h1>
 			<?php echo $links; ?>
 	</nav><!-- .navigation -->
 	<?php
 	endif;
 }
 endif;
-if ( ! function_exists( 'k_ameno_post_nav' ) ) :
+if ( ! function_exists( 'ameno_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
  *
  * @return void
  */
-function k_ameno_post_nav() {
+function ameno_post_nav() {
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -204,11 +204,11 @@ function k_ameno_post_nav() {
 	
     <nav class="navigation post-navigation" role="navigation">
         <div class="post-nav-box clear">
-            <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'k-ameno' ); ?></h1>
+            <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'ameno' ); ?></h1>
             <div class="nav-links">
                 <?php
-                previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . _x( 'Previous Post:', 'Previous post', 'k-ameno' ) . '</div><h1>%link</h1></div>', '%title' );
-                next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . _x( 'Next Post:', 'Next post', 'k-ameno' ) . '</div><h1>%link</h1></div>', '%title' );
+                previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . _x( 'Previous Post:', 'Previous post', 'ameno' ) . '</div><h1>%link</h1></div>', '%title' );
+                next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . _x( 'Next Post:', 'Next post', 'ameno' ) . '</div><h1>%link</h1></div>', '%title' );
                 ?>
             </div><!-- .nav-links -->
         </div><!-- .post-nav-box -->

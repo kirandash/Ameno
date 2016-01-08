@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package k-ameno
+ * @package ameno
  */
 
 ?>
@@ -14,9 +14,9 @@
 	<header class="entry-header">
 		<h1 class="entry-title">
                     <?php 
-                    if ( is_404() ) { _e( 'Page not available', 'k-ameno' ); }
-                    else if ( is_search() ) { printf( __( 'Nothing found for <em>', 'k-ameno') . get_search_query() . '</em>' ); }
-                    else { _e( 'Nothing Found', 'k-ameno' );}
+                    if ( is_404() ) { _e( 'Page not available', 'ameno' ); }
+                    else if ( is_search() ) { printf( __( 'Nothing found for <em>', 'ameno') . get_search_query() . '</em>' ); }
+                    else { _e( 'Nothing Found', 'ameno' );}
                     ?>
                 </h1>
 	</header>
@@ -24,21 +24,21 @@
 	<div class="entry-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'k-ameno' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'ameno' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
                         
                 <?php elseif ( is_404() ) : ?>
                         
-                        <p><?php _e( 'You seem to be lost. To find what you are looking for check out the most recent articles below or try a search:', 'k-ameno' ); ?></p>
+                        <p><?php _e( 'You seem to be lost. To find what you are looking for check out the most recent articles below or try a search:', 'ameno' ); ?></p>
                         <?php get_search_form(); ?>
                         
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php _e( 'Nothing matched your search terms. Check out the most recent articles below or try searching for something else:', 'k-ameno' ); ?></p>
+			<p><?php _e( 'Nothing matched your search terms. Check out the most recent articles below or try searching for something else:', 'ameno' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php else : ?>
 
-			<p><?php _e( 'It seems we can\'t find what you\'re looking for. Perhaps searching can help.', 'k-ameno' ); ?></p>
+			<p><?php _e( 'It seems we can\'t find what you\'re looking for. Perhaps searching can help.', 'ameno' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>

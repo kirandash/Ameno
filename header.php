@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package k-ameno
+ * @package ameno
  */
 
 ?><!DOCTYPE html>
@@ -31,9 +31,9 @@
         </div>
         <div class="search-toggle">
             <i class="fa fa-search"></i>
-            <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'k-ameno' ); ?></a>
+            <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'ameno' ); ?></a>
         </div>
-		<?php k_ameno_social_menu();  ?>
+		<?php ameno_social_menu();  ?>
     </div>
     
     <div id="search-container" class="search-box-wrapper clear">
@@ -50,13 +50,13 @@
     </div><!-- .site-branding -->
 
     <nav id="site-navigation" class="main-navigation" role="navigation">
-        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'k-ameno' ); ?></button>
+        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ameno' ); ?></button>
         <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->
 </header><!-- #masthead -->
 
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'k-ameno' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ameno' ); ?></a>
 
 	
 
