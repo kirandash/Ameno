@@ -25,7 +25,11 @@
 <header id="masthead" class="site-header" role="banner">
 	
     <div id="header-meta"> 
-		<div class="search-toggle">
+		<div class="logo">
+        	<h1 class="logo-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <h2 class="logo-description"><?php bloginfo( 'description' ); ?></h2>
+        </div>
+        <div class="search-toggle">
             <i class="fa fa-search"></i>
             <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'k-ameno' ); ?></a>
         </div>

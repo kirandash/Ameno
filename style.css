@@ -693,12 +693,23 @@ a:active {
 /* Social Menu */
 
 #header-meta{
-	background:rgba(0,0,0,0.3);
-    min-height: 30px;
 }
 
-.logged-in #header-meta{
-	margin-top:32px;
+.logo {
+	float: left;
+	clear:both;
+	padding: 1em 4em;
+}
+
+.logo-title{
+	font-size:4rem;	
+}
+
+.logo-description{
+}
+
+#menu-social {
+	float: right;
 }
 
 .menu-social ul {
@@ -718,7 +729,7 @@ a:active {
     font-size: 14px;
 }
 
-.menu-social li a {
+.menu-social li a, .logo-title a, .logo-description {
 	color:#fff;
 }
 
@@ -765,7 +776,7 @@ a:active {
     #menu-social ul {
 	    position: absolute;
         top: 0;
-        right: 6rem;
+        left: 0;
         display: block;
     }
     
@@ -773,6 +784,11 @@ a:active {
         padding-left:.5em;
         padding-right: .5em;
     }
+	.logo {
+		float: none;
+		padding: 2em 1em;
+		text-align: center;
+	}
 }
 
 .paging-navigation ul {
@@ -906,10 +922,6 @@ a:hover.page-numbers {
 	position:relative;
 }
 
-.logged-in #masthead{
-	margin-top:-32px;	
-}
-
 .header-image img {
     display: block;
     margin: 0 auto;
@@ -938,6 +950,8 @@ a:hover.page-numbers {
     color: #fff;
     text-align: center;
     cursor: pointer;
+	position:relative;
+	z-index:3;
 }
 
 .search-toggle .fa{
@@ -967,16 +981,26 @@ input[type="search"] {
 }
 
 .search-box-wrapper {
-    z-index: 2;
     width: 100%;
+    background: #ccc;
+    position: absolute;
+	z-index: 1;
+    top: 0;
+    height: 100%;
 }
 
 .search-box {
     float: right;
-	max-width: 400px;
+	width: 400px;
     padding: 0.5em;
     background: #4d4d4d;
     background: hsl(0, 0%, 30%);
+	position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    top: 50%;
+    margin-top: -22px;
+    z-index: 3;
 }
 
 .search-box .search-field {
@@ -984,7 +1008,7 @@ input[type="search"] {
     float: right;
     padding: 0.5rem 2rem 0.5rem 3rem;
     font-size: 20px;
-    font-size: 1rem;
+    font-size: 2rem;
     background-color: #fff;
     border: 0;
 }
@@ -1005,6 +1029,11 @@ input[type="search"] {
         padding: 4rem;
         border: none;
     }
+	.search-box {
+		width:280px;
+		margin-left:-140px;	
+	}
+	
 }
 
 /*--------------------------------------------------------------

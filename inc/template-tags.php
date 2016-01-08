@@ -128,6 +128,8 @@ function k_ameno_social_menu() {
 			'container_class' => 'menu-social',
 			'menu_id'         => 'menu-social-items',
 			'menu_class'      => 'menu-items',
+			'link_before'     => '<span class="screen-reader-text">',
+			'link_after'      => '</span>',
 			'depth'           => 1,
 			'fallback_cb'     => '',
 		)
