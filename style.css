@@ -801,6 +801,7 @@ span.page-numbers {
      padding: .3em .7em;
      color: #333;
      color: hsl(0, 0%, 20%);
+	 box-shadow: 0 0 0 2px #FF2A13 inset;
 }
 
 a:hover.page-numbers {
@@ -810,8 +811,8 @@ a:hover.page-numbers {
 
 .paging-navigation .current {
     font-weight: bold;
-    color: #000;
-    color: hsl(0, 0%, 0%);
+    color: #fff;
+	background:#FF2A13;
 }
 /*--------------------------------------------------------------
 # Accessibility

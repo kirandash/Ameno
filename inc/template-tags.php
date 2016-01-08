@@ -171,8 +171,8 @@ function ameno_paging_nav() {
 		'current'  => $paged,
 		'mid_size' => 2,
 		'add_args' => array_map( 'urlencode', $query_args ),
-		'prev_text' => __( '<i class="fa fa-prev"></i>', 'ameno' ),
-		'next_text' => __( '<i class="fa fa-prev"></i>', 'ameno' ),
+		'prev_text' => __( '<i class="fa fa-arrow-left"></i>', 'ameno' ),
+		'next_text' => __( '<i class="fa fa-arrow-right"></i>', 'ameno' ),
         'type'      => 'list',
 	) );
 
