@@ -11,9 +11,9 @@
 	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 
-@media screen and (max-width: 782px) {
+@media screen and (max-width: 600px) {
 	.intro {
-		position:absolute;	
+		position:absolute;
 	}
 }
 
