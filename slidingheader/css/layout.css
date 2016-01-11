@@ -11,6 +11,12 @@
 	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 
+@media screen and (max-width: 782px) {
+	.intro {
+		position:absolute;	
+	}
+}
+
 .container--open .intro {
 	-webkit-transform: translate3d(0, -100%, 0) translate3d(0, 150px, 0);
 	transform: translate3d(0, -100%, 0) translate3d(0, 150px, 0);
@@ -47,6 +53,24 @@
 	width: 100%;
 	font-size: 1.15em;
 	transition:0.5s all ease-in-out;
+}
+
+.logged-in .intro__content {
+	bottom: 32px;
+}
+
+.logged-in .intro__content {
+	bottom: 32px;
+}
+
+.logged-in .container--open .intro__content {
+	bottom:0px;
+}
+
+@media screen and (max-width: 782px) {
+.logged-in .intro__content {
+	bottom: 46px;
+}		
 }
 
 .intro__title {
