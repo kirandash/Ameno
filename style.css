@@ -1120,7 +1120,7 @@ input[type="search"] {
 
 .search-box-wrapper {
     width: 100%;
-    background: #ccc;
+    background: rgba(255,42,19,0.9);
     position: absolute;
 	z-index: 1;
     top: 0;
