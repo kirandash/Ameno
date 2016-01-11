@@ -24,8 +24,8 @@ function ameno_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'ameno_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => 'ffffff',
-		'width'                  => 1280,
-		'height'                 => 300,
+		'width'                  => 1440,
+		'height'                 => 960,
 		'flex-height'            => false,
 		'wp-head-callback'       => 'ameno_header_style',
 	) ) );

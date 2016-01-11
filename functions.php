@@ -48,6 +48,7 @@ function ameno_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_image_size('large-thumb', 1060, 650, true);
 	add_image_size('index-thumb', 780, 250, true);
+	add_image_size('square-thumb', 500, 500, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -146,8 +147,15 @@ function ameno_scripts() {
 	// FontAwesome
 	wp_enqueue_style('ameno_fontawesome', get_template_directory_uri() .  '/font-awesome/css/font-awesome.min.css');
 	
-	wp_enqueue_script( 'ameno-superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jquery'), '20140328', true );
+	wp_enqueue_style('ameno_slidingheader_normalize', get_template_directory_uri() .  '/slidingheader/css/normalize.css');
 	
+	wp_enqueue_style('ameno_slidingheader_style', get_template_directory_uri() .  '/slidingheader/css/style.css');
+	
+	wp_enqueue_style('ameno_slidingheader_layout', get_template_directory_uri() .  '/slidingheader/css/layout.css');
+	
+	wp_enqueue_script( 'ameno-superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jquery'), '20140328', true );
+    
+    wp_enqueue_script( 'ameno-slidingheader', get_template_directory_uri() . '/slidingheader/js/main.js', array('jquery'), '20140328', true );
 	wp_enqueue_script( 'ameno-superfish-settings', get_template_directory_uri() . '/js/superfish-settings.js', array('ameno-superfish'), '20140328', true );
                 
 	wp_enqueue_script( 'ameno-hide-search', get_template_directory_uri() . '/js/hide-search.js', array(), '20140404', true );
