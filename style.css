@@ -1466,7 +1466,7 @@ input[type="search"] {
 }
 
 .entry-footer a {
-    margin-left: .5rem;
+    margin-right: .5rem;
 }
 .sticky {
 	display: block;
@@ -1484,7 +1484,7 @@ input[type="search"] {
 .byline, .posted-on, .tags-links, .comments-link, .edit-link {
     display: inline-block;
     vertical-align: top;
-	margin: 0 1em;
+	margin: 0 2em 0 0;
 }
 
 .byline:before, .posted-on:before, .tags-links:before, .comments-link:before, .edit-link:before {
@@ -1902,13 +1902,6 @@ object {
 	margin-bottom: 1.5em;
 }
 
-.gallery-item {
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
-	width: 100%;
-}
-
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
 }
@@ -1959,6 +1952,8 @@ object {
     position: relative;    
     max-width:100%;
     float: left;
+    margin-top:0;
+	margin-left:0;
     margin-right: 3.333333333%;
     margin-bottom: 3rem;
     background: #333;
