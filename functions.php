@@ -132,7 +132,9 @@ add_action( 'widgets_init', 'ameno_widgets_init' );
  * Enqueue scripts and styles.
  */
 function ameno_scripts() {
-
+	
+	wp_enqueue_style( 'ameno-style', get_stylesheet_uri() );
+	
 	if (is_page_template('page-templates/page-nosidebar.php')) {
 		wp_enqueue_style( 'ameno-layout-style' , get_template_directory_uri() . '/layouts/no-sidebar.css');
 	} else {
@@ -145,14 +147,6 @@ function ameno_scripts() {
                     
 	// FontAwesome
 	wp_enqueue_style('ameno_fontawesome', get_template_directory_uri() .  '/font-awesome/css/font-awesome.min.css');
-	
-	wp_enqueue_style('ameno_slidingheader_normalize', get_template_directory_uri() .  '/slidingheader/css/normalize.css');
-	
-	wp_enqueue_style('ameno_slidingheader_style', get_template_directory_uri() .  '/slidingheader/css/style.css');
-	
-	wp_enqueue_style('ameno_slidingheader_layout', get_template_directory_uri() .  '/slidingheader/css/layout.css');
-
-	wp_enqueue_style( 'ameno-style', get_stylesheet_uri() );
 		
 	wp_enqueue_script( 'ameno-superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jquery'), '20140328', true );
 
