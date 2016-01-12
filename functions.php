@@ -137,6 +137,8 @@ function ameno_scripts() {
 	
 	if (is_page_template('page-templates/page-nosidebar.php')) {
 		wp_enqueue_style( 'ameno-layout-style' , get_template_directory_uri() . '/layouts/no-sidebar.css');
+	} elseif(is_page_template('page-templates/page-leftsidebar.php')) {
+		wp_enqueue_style( 'ameno-layout-style' , get_template_directory_uri() . '/layouts/sidebar-content.css');
 	} else {
 		wp_enqueue_style( 'ameno-layout-style' , get_template_directory_uri() . '/layouts/content-sidebar.css');
 	}

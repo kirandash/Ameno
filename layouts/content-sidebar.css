@@ -104,6 +104,16 @@
     }
 }
 
+@media screen and (min-width: 1540px) and (max-width: 1820px) {
+    .image-shifter { margin-right: 380px;}
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1819px) {
+    .image-shifter {
+        float: right;
+    }
+}
+
 .page-header,.paging-navigation {
     padding-top: 1em;
     padding-bottom: 1em;
