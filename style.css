@@ -1524,7 +1524,7 @@ input[type="search"] {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+/*	margin: 1.5em 0 0;*/
 }
 
 .page-links {
@@ -1727,11 +1727,17 @@ Index and Archive
 
 .read-more a{
     padding: 11px 28px;
-	box-shadow: 0 0 0 2px #e8e8e8 inset;	
+	border: 2px solid #FF2A13;	
 	color: #666666;
+	box-shadow: inset 0 0 0 0 #FF2A13;
+	-webkit-transition: all ease 0.5s;
+	-moz-transition: all ease 0.5s;
+	transition: all ease 0.5s;
 }
 .read-more a:hover{
-    background-color: rgba(0,0,0,0.1);
+    border: 2px solid #FF2A13;	
+	box-shadow: inset 0 100px 0 0 #FF2A13;
+	color:#fff;
 }
 
 .read-more i { margin-left: .5em; }
