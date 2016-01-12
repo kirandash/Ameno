@@ -62,9 +62,7 @@
 	<footer class="entry-footer">
 		
 		<?php
-            echo get_the_tag_list( '<ul><li><i class="fa fa-tag"></i>', '</li><li><i class="fa fa-tag"></i>', '</li></ul>' );
-        ?>
-        
-		<?php edit_post_link( __( 'Edit', 'ameno' ), '<span class="edit-link">', '</span>' ); ?>
+            ameno_entry_footer();
+		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
