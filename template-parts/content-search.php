@@ -34,7 +34,7 @@
         </div><!-- .entry-summary -->
     
         <footer class="entry-footer read-more">
-            <?php echo '<a href="' . get_permalink() . '" title="' . __('Read more ', 'ameno') . get_the_title() . '" rel="bookmark">Read more</a>'; ?>
+            <?php echo '<a href="' . esc_url( get_permalink() ). '" title="' . esc_html__('Read more about : ', 'ameno') . get_the_title() . '" rel="bookmark">'. esc_html__('Read more', 'ameno') .'</a>'; ?>
         </footer><!-- .entry-footer -->
     </div>
 </article><!-- #post-## -->

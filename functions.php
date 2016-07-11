@@ -29,6 +29,13 @@ function ameno_setup() {
 	 */
 	load_theme_textdomain( 'ameno', get_template_directory() . '/languages' );
 
+	// Add theme support for custom logo as it is required for wordPress 4.5 onwards.
+	add_theme_support( 'custom-logo', array(
+		'height'      => 100,
+		'width'       => 400,
+		'flex-width' => true,
+	) );
+	
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -46,9 +53,10 @@ function ameno_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size('large-thumb', 1060, 650, true);
-	add_image_size('index-thumb', 780, 250, true);
-	add_image_size('square-thumb', 500, 500, true);
+	add_image_size('ameno-large-thumb', 1060, 650, true);
+	add_image_size('ameno-index-thumb', 780, 250, true);
+	add_image_size('ameno-square-thumb', 500, 500, true);
+	add_image_size('ameno-side-gallery-thumb', 300, 450, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -74,10 +82,6 @@ function ameno_setup() {
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
 	) );
 
 	// Set up the WordPress core custom background feature.
@@ -128,11 +132,46 @@ function ameno_widgets_init() {
 }
 add_action( 'widgets_init', 'ameno_widgets_init' );
 
+function ameno_fonts_url() {
+        $fonts_url = '';
+        $fonts     = array();
+        $subsets   = 'latin,latin-ext';
+
+        /* translators: If there are characters in your language that are not supported by Lato, translate this to 'off'. Do not translate into your own language. */
+        if ( 'off' !== _x( 'on', 'Lato font: on or off', 'ameno' ) ) {
+                $fonts[] = 'Lato:100,300,400,400italic,700,900,900italic';
+        }
+
+        /* translators: If there are characters in your language that are not supported by PT Serif, translate this to 'off'. Do not translate into your own language. */
+        if ( 'off' !== _x( 'on', 'PT Serif font: on or off', 'ameno' ) ) {
+                $fonts[] = 'PT Serif:400,700,400italic,700italic';
+        }
+
+        if ( $fonts ) {
+                $fonts_url = add_query_arg( array(
+                        'family' => urlencode( implode( '|', $fonts ) ),
+                        'subset' => urlencode( $subsets ),
+                ), 'https://fonts.googleapis.com/css' );
+        }
+
+        return $fonts_url;
+}
+
+/**
+ * Ameno Custom Logo
+ */
+function ameno_get_custom_logo() {
+	
+	if ( function_exists( 'get_custom_logo' ) ) {
+		return get_custom_logo();
+	}
+
+}
+
 /**
  * Enqueue scripts and styles.
  */
 function ameno_scripts() {
-	
 	wp_enqueue_style( 'ameno-style', get_stylesheet_uri() );
 	
 	if (is_page_template('page-templates/page-nosidebar.php')) {
@@ -145,25 +184,21 @@ function ameno_scripts() {
 	
 	wp_enqueue_style( 'ameno-layout-style' , get_template_directory_uri() . '/layouts/content-sidebar.css');
 	
-	wp_enqueue_style( 'ameno-google-fonts', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,400italic,700,900,900italic|PT+Serif:400,700,400italic,700italic' );
+	wp_enqueue_style( 'google-fonts', ameno_fonts_url() );
                     
 	// FontAwesome
-	wp_enqueue_style('ameno_fontawesome', get_template_directory_uri() .  '/font-awesome/css/font-awesome.min.css');
+	wp_enqueue_style('fontawesome', get_template_directory_uri() .  '/font-awesome/css/font-awesome.min.css');
 		
-	wp_enqueue_script( 'ameno-superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jquery'), '20140328', true );
-
-	wp_enqueue_script( 'ameno-slidingheader-classie', get_template_directory_uri() . '/slidingheader/js/classie.js', array('jquery'), '20140328', true );
-    
-    wp_enqueue_script( 'ameno-slidingheader-main', get_template_directory_uri() . '/slidingheader/js/main.js', array('jquery'), '20140328', true );
+	wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.min.js', array('jquery'), '20140328', true );
 	
-	wp_enqueue_script( 'ameno-superfish-settings', get_template_directory_uri() . '/js/superfish-settings.js', array('ameno-superfish'), '20140328', true );
+	wp_enqueue_script( 'superfish-settings', get_template_directory_uri() . '/js/superfish-settings.js', array('ameno-superfish'), '20140328', true );
                 
 	wp_enqueue_script( 'ameno-hide-search', get_template_directory_uri() . '/js/hide-search.js', array(), '20140404', true );
 	
-	wp_enqueue_script( 'ameno-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'ameno-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-	wp_enqueue_script( 'ameno-masonry', get_template_directory_uri() . '/js/masonry-settings.js', array('masonry'), '20140401', true );
+	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/masonry-settings.js', array('masonry'), '20140401', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

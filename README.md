@@ -1,45 +1,82 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+# Ameno #
 
-Ameno
-=====
+Author: BG Web Agency
 
-Hi. I'm a starter theme called `Ameno`. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Tags: one-column, two-columns, right-sidebar, left-sidebar, custom-header, custom-menu, editor-style, featured-images, post-formats, sticky-post, threaded-comments, translation-ready
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+## Description ##
 
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A helpful 404 template.
-* A sample custom header implementation in `inc/custom-header.php` that can be activated by uncommenting one line in `functions.php` and adding the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/extras.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample CSS layouts in `layouts/` for a sidebar on either side of your content.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
+The ameno theme focuses mainly on readability of content and is suitable for blog, portfolio or any other website that needs it's content to highlight.
 
-Getting Started
----------------
+## Support ##
 
-If you want to keep it simple, head over to http://underscores.me and generate your `_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
+To get support, please contact us at [http://bgwebagency.com/contact/](http://bgwebagency.com/contact/)
 
-If you want to set things up manually, download `_s` from GitHub. The first thing you want to do is copy the `_s` directory and change the name to something else (like, say, `megatherium`), and then you'll need to do a five-step find and replace on the name in all the templates.
+If you have feature requests then please leave them under [Issues at Github](https://github.com/kirandash/Ameno/issues).
 
-1. Search for `'_s'` (inside single quotations) to capture the text domain.
-2. Search for `_s_` to capture all the function names.
-3. Search for `Text Domain: _s` in style.css.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks.
-5. Search for `_s-` to capture prefixed handles.
+## Installation ##
 
-OR
+You can install the theme through the WordPress installer under Themes-Install themes by searching for it.
+Alternatively you can download the file from here, unzip it and move the unzipped contents to the wp-content/themes folder
+of your WordPress installation. You will then be able to activate the theme.
 
-* Search for: `'_s'` and replace with: `'megatherium'`
-* Search for: `_s_` and replace with: `megatherium_`
-* Search for: `Text Domain: _s` and replace with: `Text Domain: megatherium` in style.css.
-* Search for: <code>&nbsp;_s</code> and replace with: <code>&nbsp;Megatherium</code>
-* Search for: `_s-` and replace with: `megatherium-`
+## Frequently Asked Questions ##
 
-Then, update the stylesheet header in `style.css` and the links in `footer.php` with your own information. Next, update or delete this readme.
+### How to add sidebar or footer widgets ###
 
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+Go to appearance - widgets. Drag widgets from left side and drop into Footer widgets or Sidebar.
 
-Good luck!
+### How to setup homepage without Blog ###
+
+Go to settings - reading and select A static page as option for front page display. Select any page as front page and a page called say "Blog" for blog page.
+
+### Where can I get support for the theme? ###
+
+Support is available at [http://bgwebagency.com/contact/](http://bgwebagency.com/contact/)
+
+### How to use menus ###
+
+For Menus: Use wordpress Menu system under Appearance tab.
+
+## Credits ##
+
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License.
+
+#### jQuery ####
+ [http://jquery.com/]([http://jquery.com/])
+
+#### Superfish ####
+URL:	[https://github.com/joeldbirch/superfish](https://github.com/joeldbirch/superfish)
+
+License:	[https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt](https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt)
+
+#### Lato Google Font ####
+URL:	[https://www.google.com/fonts/specimen/Lato](https://www.google.com/fonts/specimen/Lato)
+
+License:	[SIL OFL 1.1](http://scripts.sil.org/OFL)
+
+#### Font awesome ####
+URL:	[http://fontawesome.io/](http://fontawesome.io/)
+
+License:	[http://fontawesome.io/license/](http://fontawesome.io/license/)
+
+Fontawesome Fonts License: [http://scripts.sil.org/OFL](http://scripts.sil.org/OFL)
+
+Fontawesome Code License: [http://opensource.org/licenses/mit-license.html](http://opensource.org/licenses/mit-license.html)
+
+Fontawesome Documentation License: [http://creativecommons.org/licenses/by/3.0/](http://creativecommons.org/licenses/by/3.0/)
+
+#### Navigation js ####
+URL:	[https://gist.github.com/joshmcrty/926f522766a491042be1](https://gist.github.com/joshmcrty/926f522766a491042be1)
+
+#### Underscores Starter Theme ####
+URL:	[https://github.com/Automattic/_s](https://github.com/Automattic/_s)
+
+#### Simone Theme ####
+URL:	[https://wordpress.org/themes/simone/](https://wordpress.org/themes/simone/)
+
+#### Masonry ####
+URL:	[http://masonry.desandro.com/#mit-license](http://masonry.desandro.com/#mit-license)
+
+Thanks for downloading the Ameno theme.
+

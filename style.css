@@ -1,20 +1,21 @@
 /*
 Theme Name: ameno
-Theme URI: http://infasta.com/ameno
-Author: thekirankumardash
-Author URI: http://thekirankumardash.in/
+Theme URI: http://bgwebagency.com/free-wordpress-themes/ameno-free-wordpress-theme/
+Author: BG Web Agency
+Author URI: http://bgwebagency.com
 Description: The ameno theme focuses mainly on readability of content and is suitable for blog, portfolio or any other website that needs it's content to highlight.
-Version: 1.0.0
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: ameno
-Tags: white, black, red, light, one-column, two-columns, right-sidebar, responsive-layout, accessibility-ready, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, threaded-comments, translation-ready, rtl-language-support
+Tags: one-column, two-columns, right-sidebar, left-sidebar, custom-header, custom-menu, editor-style, featured-images, post-formats, sticky-post, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 ameno is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
+ameno WordPress Theme incorporates code from Simone WordPress Theme.
+ameno is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
@@ -322,7 +323,7 @@ pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: 1.5rem;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -336,7 +337,7 @@ tt,
 var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: 1.5rem;
 }
 
 abbr,
@@ -369,7 +370,7 @@ html {
 }
 
 body {
-	background: #f3f3f3 url(images/bg-site-main.png) center top repeat; /* Fallback for when there is no custom background color defined. */
+	background: #f3f3f3; /* Fallback for when there is no custom background color defined. */
 }
 
 blockquote:before,
@@ -490,6 +491,7 @@ textarea {
     border: 1px solid #ddd;
 	border-radius: 4px;
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	max-width: 100%;
 }
 
 select {
@@ -689,19 +691,19 @@ a:active {
 
 @media screen and (max-width: 600px) {
 	.menu-toggle {
-            display: block;
-            height: 2.75em;
-            padding: 0 1em;
-            font-weight: normal;
-            font-size: 14px;
-            font-size: 1.4rem;
-            text-decoration: none;
-            line-height: 2.75em;
-            color: white;
-			font-family: "Lato",sans-serif;
-			font-style: normal;
-			font-weight: 400;
-			letter-spacing: 0.221em;
+		display: block;
+		height: 2.75em;
+		padding: 0 1em;
+		font-weight: normal;
+		font-size: 14px;
+		font-size: 1.4rem;
+		text-decoration: none;
+		line-height: 2.75em;
+		color: white;
+		font-family: "Lato",sans-serif;
+		font-style: normal;
+		font-weight: 400;
+		letter-spacing: 0.221em;
 	}
         
 	.main-navigation.toggled .nav-menu {
@@ -712,8 +714,8 @@ a:active {
 	}
 
 	.main-navigation ul {
-            display: none;
-            padding-left: 0;
+		display: none;
+		padding-left: 0;
 	}
         
 	.main-navigation li { 
@@ -838,11 +840,11 @@ a:active {
 	padding: 1em 4em;
 }
 
-.logo-title{
+.site-title{
 	font-size:4rem;	
 }
 
-.logo-description{
+.site-description{
 }
 
 #menu-social {
@@ -855,18 +857,19 @@ a:active {
     list-style: none;   
 	line-height:30px; 
 	margin:0;
+	padding: 0;
 }
 
 .menu-social ul li {
     position: relative;
     float:left; 
-    padding: 0 10px;
+    padding: 0 5px;
     line-height: 30px; 
     font-family: 'Lato', sans-serif;
     font-size: 14px;
 }
 
-.menu-social li a, .logo-title a, .logo-description {
+.menu-social li a, .site-title a, .site-description {
 	color:#fff;
 }
 
@@ -930,6 +933,8 @@ a:active {
 
 .paging-navigation ul {
     margin: 0;
+	padding: 0;
+	text-align: left;
 }
 
 .paging-navigation li { display: inline; }
@@ -1058,6 +1063,13 @@ a:hover.page-numbers {
 #masthead{
     background: #ff2a13;
 	position:relative;
+}
+
+.site-branding {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    float: left;	
 }
 
 .header-image img {
@@ -1487,13 +1499,17 @@ input[type="search"] {
 	margin: 0 2em 0 0;
 }
 
-.byline:before, .posted-on:before, .tags-links:before, .comments-link:before, .edit-link:before {
+.category-list:before, .byline:before, .posted-on:before, .tags-links:before, .comments-link:before, .edit-link:before {
     padding-top: 2px;
     font-family: 'fontawesome';
     font-size: 14px;
     font-size: 1.4rem;
     color: #ff2a13;	
 	margin-right: 0.5em;
+}
+
+.category-list:before {
+	content: "\f07c";
 }
 
 .byline:before {
@@ -1719,7 +1735,6 @@ Index and Archive
 --------------------------------------------------------------*/
 
 .read-more {
-    margin: 0 4rem;
     font-weight: 900;
     font-size: 18px;
     font-size: 1.8rem;
@@ -1841,30 +1856,6 @@ object {
 }
 
 /*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-
-.site-footer {
-    padding: 2em;
-    font-family: 'Lato';
-    font-size: 16px;
-    font-size: 1.6rem;
-    color: #fff;
-    color: hsl(0, 0%, 100%);
-    background: #313131;
-    background: hsl(0, 0%, 19%);
-}
-
-.site-footer a {
-    color: #fff;
-    color: hsl(0, 0%, 100%);
-}
-
-.site-info { 
-    text-align: center; 
-}
-
-/*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
 .wp-caption {
@@ -1981,4 +1972,28 @@ object {
     display: block;
     margin: 0 auto;
     border: none;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+.site-footer {
+    padding: 2em;
+    font-family: 'Lato';
+    font-size: 16px;
+    font-size: 1.6rem;
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+    background: #313131;
+    background: hsl(0, 0%, 19%);
+}
+
+.site-footer a {
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+}
+
+.site-info { 
+    text-align: center; 
 }

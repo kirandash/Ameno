@@ -14,7 +14,7 @@
         if (has_post_thumbnail()) {
             echo '<div class="front-index-thumbnail clear">';
             echo '<div class="image-shifter">';
-            echo '<a href="' . get_permalink() . '" title="' . __('Read ', 'ameno') . get_the_title() . '" rel="bookmark">';
+            echo '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_html__('Read ', 'ameno') . get_the_title() . '" rel="bookmark">';
             echo the_post_thumbnail('large-thumb');
             echo '</a>';
             echo '</div>';
@@ -27,7 +27,7 @@
         echo '<div class="index-box">';
         if (has_post_thumbnail()) {
             echo '<div class="small-index-thumbnail clear">';
-            echo '<a href="' . get_permalink() . '" title="' . __('Read ', 'ameno') . get_the_title() . '" rel="bookmark">';
+            echo '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_html__('Read ', 'ameno') . get_the_title() . '" rel="bookmark">';
             echo the_post_thumbnail('index-thumb');
             echo '</a>';
             echo '</div>';
@@ -72,14 +72,14 @@
         the_content( __( '', 'ameno' ) );
         echo '</div>';
         echo '<footer class="entry-footer read-more">';
-        echo '<a href="' . get_permalink() . '" title="' . __('Read ', 'ameno') . get_the_title() . '" rel="bookmark">Read the article</a>'; 
+        echo '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_html__('Read about : ', 'ameno') . get_the_title() . '" rel="bookmark">'. esc_html__('Read the article', 'ameno') .'</a>'; 
         echo '</footer><!-- .entry-footer -->';
     } else { ?>
         <div class="entry-content">
         <?php the_excerpt(); ?>
         </div><!-- .entry-content -->
         <footer class="entry-footer read-more">
-        <?php echo '<a href="' . get_permalink() . '" title="' . __('Read more ', 'ameno') . get_the_title() . '" rel="bookmark">Read more</a>'; ?>
+        <?php echo '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_html__('Read about : ', 'ameno') . get_the_title() . '" rel="bookmark">'. esc_html__('Read the article', 'ameno') .'</a>'; ?>
         </footer><!-- .entry-footer -->
     <?php } ?>
     

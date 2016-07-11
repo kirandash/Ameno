@@ -58,7 +58,7 @@ function ameno_entry_footer() {
 		comments_popup_link( esc_html__( 'Leave your comment', 'ameno' ), esc_html__( '1 Comment', 'ameno' ), esc_html__( '% Comments', 'ameno' ) );
 		echo '</span>';
 	}
-
+	
 	edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
@@ -171,8 +171,8 @@ function ameno_paging_nav() {
 		'current'  => $paged,
 		'mid_size' => 2,
 		'add_args' => array_map( 'urlencode', $query_args ),
-		'prev_text' => __( '<i class="fa fa-arrow-left"></i>', 'ameno' ),
-		'next_text' => __( '<i class="fa fa-arrow-right"></i>', 'ameno' ),
+		'prev_text' => '<i class="fa fa-arrow-left"></i>',
+		'next_text' => '<i class="fa fa-arrow-right"></i>',
         'type'      => 'list',
 	) );
 
@@ -180,7 +180,7 @@ function ameno_paging_nav() {
 
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'ameno' ); ?></h1>
+		<h1 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'ameno' ); ?></h1>
 			<?php echo $links; ?>
 	</nav><!-- .navigation -->
 	<?php
@@ -204,11 +204,11 @@ function ameno_post_nav() {
 	
     <nav class="navigation post-navigation" role="navigation">
         <div class="post-nav-box clear">
-            <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'ameno' ); ?></h1>
+            <h1 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'ameno' ); ?></h1>
             <div class="nav-links">
                 <?php
-                previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . _x( 'Previous Post:', 'Previous post', 'ameno' ) . '</div><h1>%link</h1></div>', '%title' );
-                next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . _x( 'Next Post:', 'Next post', 'ameno' ) . '</div><h1>%link</h1></div>', '%title' );
+                previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . esc_html_x( 'Previous Post:', 'Previous post', 'ameno' ) . '</div>%link</div>', '%title' );
+                next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . esc_html_x( 'Next Post:', 'Next post', 'ameno' ) . '</div>%link</div>', '%title' );
                 ?>
             </div><!-- .nav-links -->
         </div><!-- .post-nav-box -->
